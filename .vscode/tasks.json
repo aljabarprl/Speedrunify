@@ -1,0 +1,49 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+            "label": "Compile Resource",
+            "type": "shell",
+            "command": "C:/msys64/mingw64/bin/windres.exe",
+            "args": [
+				"resource.rc",
+                "-o",
+				"resource.o"
+            ],
+			"options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": "build"
+        },
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe build active file",
+			"command": "C:/msys64/mingw64/bin/g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"resource.o",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"-lraylib",
+				"-lopengl32",
+				"-lgdi32",
+				"-lwinmm",
+				"-mwindows"
+			],
+			"options": {
+                "cwd": "${fileDirname}"
+            },
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: C:/msys64/mingw64/bin/g++.exe",
+			"dependsOn": ["Compile Resource"]
+		}
+	]
+}
