@@ -18,7 +18,7 @@
 
 > #### Note: 
 > #### **if you want to developed/build yourself or even debug, you'll need these:**
-> ##### - MSTS2 MINGW64 for the installation header
+> ##### - MSYS2 MINGW64 for the installation header
 > ##### - GCC, GNU Compiler
 > ##### - Linker (C-MAKE, etc.)
 
